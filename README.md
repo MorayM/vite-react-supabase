@@ -1,6 +1,8 @@
-# React + Vite boilerplate
+# React + Vite + Supabase boilerplate
 
-This is my minimal React boilerplate, focussed on adding functionality fast! No state management, just React, routing, querying and tests.
+This is my minimal React boilerplate for working with a Supabase backend. Keep it simple with no state management, just React, routing and tests.
+
+This is a work-in-progress!
 
 ## Get Started
 

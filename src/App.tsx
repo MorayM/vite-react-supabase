@@ -7,7 +7,7 @@ function App() {
   return (
     <div className={styles.wrap}>
       <header>
-        <h1>React + Vite boilerplate</h1>
+        <h1>React + Vite + Supabase boilerplate</h1>
       </header>
       <div className={styles.page}>
         <Nav />

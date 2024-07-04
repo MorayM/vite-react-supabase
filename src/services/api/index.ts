@@ -1,19 +1,6 @@
-import axios, { type AxiosInstance, type AxiosRequestConfig } from 'axios';
-import { errorInterceptor, successInterceptor } from './interceptors';
+import { createClient } from '@supabase/supabase-js';
 
-const axiosRequestConfig: AxiosRequestConfig = {
-  baseURL: import.meta.env.VITE_API_END_POINT,
-  responseType: 'json',
-  headers: {
-    'Content-Type': 'application/json',
-    // 'Access-Control-Allow-Origin': '*',
-  },
-};
+// Create a single supabase client for interacting with your database
+const supabase = createClient(import.meta.env.VITE_SUPABASE_ENDPOINT, import.meta.env.VITE_SUPABASE_KEY);
 
-const api: AxiosInstance = axios.create(axiosRequestConfig);
-
-// TODO: add options for authenticated requests
-// api.interceptors.request.use(requestInterceptor);
-api.interceptors.response.use(successInterceptor, errorInterceptor);
-
-export default api;
+export default supabase;

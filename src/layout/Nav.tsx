@@ -12,9 +12,6 @@ function Nav() {
         <li>
           <Link to="/">Homepage</Link>
         </li>
-        <li>
-          <Link to="/people">Star Wars People</Link>
-        </li>
       </ul>
     </nav>
   );

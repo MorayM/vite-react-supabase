@@ -2,9 +2,7 @@ import { fixupConfigRules, fixupPluginRules } from "@eslint/compat";
 import react from "eslint-plugin-react";
 import reactRefresh from "eslint-plugin-react-refresh";
 import typescriptEslint from "@typescript-eslint/eslint-plugin";
-import prettier from "eslint-plugin-prettier";
-import { configs as ReactQueryConfigs, rules as ReactQueryRules } from '@tanstack/eslint-plugin-query';
-import globals from "globals";
+import prettier from "eslint-plugin-prettier";import globals from "globals";
 import tsParser from "@typescript-eslint/parser";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -28,14 +26,12 @@ export default [{
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "prettier",
-    "plugin:@tanstack/eslint-plugin-query/recommended",
 )), {
     plugins: {
         react: fixupPluginRules(react),
         "react-refresh": reactRefresh,
         "@typescript-eslint": fixupPluginRules(typescriptEslint),
         prettier,
-        '@tanstack/eslint-plugin-query': { rules: ReactQueryRules, configs: ReactQueryConfigs },
     },
 
     languageOptions: {
@@ -53,7 +49,7 @@ export default [{
             },
 
             project: ["./tsconfig.json", "./tsconfig.node.json"],
-            tsconfigRootDir: "/home/moray/src/vite-react-base",
+            tsconfigRootDir: __dirname,
         },
     },
 
@@ -72,9 +68,6 @@ export default [{
         // If you're using TypeScript properly, you **shouldn't** need to enforce this
         'react/require-default-props': 'off',
 
-        '@tanstack/eslint-plugin-query/exhaustive-deps': 'error',
-        '@tanstack/eslint-plugin-query/no-rest-destructuring': 'warn',
-        '@tanstack/eslint-plugin-query/stable-query-client': 'error',
         // Current W3C guidance is that `for` is the preferred way to associate labels with controls
         'jsx-a11y/label-has-associated-control': ['error', {
           labelComponents: [],

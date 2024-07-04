@@ -3,7 +3,8 @@
 /// <reference types="vitest" />
 
 interface ImportMetaEnv {
-  readonly VITE_EXAMPLE_VARIABLE: string;
+  readonly VITE_SUPABASE_ENDPOINT: string;
+  readonly VITE_SUPABASE_KEY: string;
   // more env variables...
 }
 
